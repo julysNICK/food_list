@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:food_list/pages/home_page.dart';
+import 'package:food_list/pages/single_item.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,6 +28,7 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => const Home(),
+        "singleItemPage": (context) => const SingleItemPage(),
       },
     );
   }

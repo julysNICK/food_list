@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ItemWidgets extends StatelessWidget {
@@ -10,7 +11,7 @@ class ItemWidgets extends StatelessWidget {
       shrinkWrap: true,
       childAspectRatio: 0.76,
       children: [
-        for (int i = 1; i < 10; i++)
+        for (int i = 1; i < 6; i++)
           Container(
             padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
             margin: const EdgeInsets.symmetric(
@@ -30,7 +31,73 @@ class ItemWidgets extends StatelessWidget {
               ],
             ),
             child: Column(
-              children: const [],
+              children: [
+                InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, "singleItemPage");
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.all(10.00),
+                    child: Image.asset(
+                      "images/$i.png",
+                      height: 95,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 8.00,
+                  ),
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: const Text(
+                      'Burger',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: const Text(
+                      'Lorem ipsum lorem lorem',
+                      style: TextStyle(
+                        color: Colors.white60,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 10,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: const [
+                      Text(
+                        '\$ 20.00',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Icon(
+                        CupertinoIcons.cart_badge_plus,
+                        color: Colors.white,
+                        size: 27,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
           )
       ],
